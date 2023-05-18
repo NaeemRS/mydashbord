@@ -19,14 +19,12 @@ export default function Loginform1() {
     setIsSubmitted(true);
     setIsLoggedIn(true);
   };
-
   return (
     <>
       <section className=" object-cover lg:bg-transparent bg-cover bg-no-repeat items-start justify-center relative 2xl:h-screen xl:h-[721px] lg:h-[700px] md:h-[650px] h-auto  ">
         <img src={imgcheck} className="w-full lg:block hidden absolute  top-0 left-0 right-0 bottom-0 h-full" />
         <div className="grid grid-cols-1 !z-50 lg:h-screen  items-center justify-center">
           <div className="flex items-center md:flex-nowrap flex-wrap p-12 justify-between rounded-[5px]-2xl lg:w-[80%] overflow-hidden mx-auto">
-
             <div
               className="xl:w-[42%] md:w-1/2 w-full">
               <img
@@ -43,7 +41,7 @@ export default function Loginform1() {
                   Hi, Welcome Back!
                 </h1>
               </div>
-              <div className="">
+              <div>
                 <form
                   onSubmit={handleSubmit}
                   className="grid grid-cols-1 gap-3"
@@ -78,7 +76,7 @@ export default function Loginform1() {
                         className="absolute top-0 right-0 mr-5 mt-4 focus:outline-none"
                         onClick={handleTogglePassword}
                       >
-                        <img className="w-6 mx-auto" src={showPassword ? (imgcheck) : (eyeSlash)} /> </button></div>
+                        <img className="w-6 mx-auto" alt="icons" src={showPassword ? (imgcheck) : (eyeSlash)} /> </button></div>
                   </div>
                   <div className="lg:mb-4 md:mb-3 mb-2 flex items-center justify-between">
                     <div className="inline-flex">

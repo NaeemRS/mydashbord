@@ -6,7 +6,7 @@ import { AiFillPieChart } from 'react-icons/ai'
 import { SiFuturelearn } from 'react-icons/si'
 import { SiOpenaccess } from 'react-icons/si'
 import { CgProfile } from 'react-icons/cg'
-import Logo from '../assets/images/logo.svg'
+// import Logo from '../assets/images/logo.svg'
 
 const Sidebar = () => {
     const [open, setOpen] = useState(false)
@@ -34,7 +34,7 @@ const Sidebar = () => {
                 />
                 <Link to='/'>
                     <div className={`flex ${open && 'gap-x-4'} items-center`}>
-                        <img src={Logo} alt='' className='pl-2' />
+                        {/* <img src={Logo} alt='' className='pl-2' /> */}
                         {open && (
                             <span className='text-xl font-medium whitespace-nowrap dark:text-white'>
                                 Goal Quest

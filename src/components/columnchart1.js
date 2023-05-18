@@ -12,7 +12,6 @@ export default function Columnchart1() {
                 name: "Revenue",
                 data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
             },
-          
         ],
         chart: {
             type: "bar",

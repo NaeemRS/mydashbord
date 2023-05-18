@@ -20,8 +20,8 @@ const Layout = ({ children }) => {
     <>
       <Navbar />
       <div className="flex flex-auto">
-       <div className='xl:w-[25%] w-[40%] lg:inline-block hidden '> <Sidebar /></div>
-        <div className="grow w-full lg:w-[80%]">
+       <div className='lg:w-[22%] w-[40%] lg:inline-block hidden '> <Sidebar /></div>
+        <div className="grow w-full xl:w-[78%]">
           <div className="m-5">{children}</div>
         </div>
       </div>

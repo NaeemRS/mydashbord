@@ -18,7 +18,6 @@ const Sidebar = () => {
         { title: 'Profile', path: '/profile', src: <CgProfile /> },
         { title: 'Signin', path: '/login', src: <SiOpenaccess />, gap: 'true' },
     ]
-
     return (
         <>
             <div

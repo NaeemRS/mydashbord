@@ -1,48 +1,118 @@
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import Link from "next/link";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-
-import React, { useState } from 'react'
-import Sidebar from './Sidebar'
-import Dropdown from './header/Dropdown'
-
-
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Navbar = () => {
-  const [open, setOpen] = useState(false)
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const toggleClose = () => {
+    setToggleMenu("");
+  };
+  const [menu, setMenu] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+
+
+  // const { data: session } = useSession();
+
+
+
   return (
-    <nav className=' py-2.5 bg-gradient-to-r from-black to-blue-500 via-yellow-500'>
-      <div className='container lg:px-20 px-4 flex justify-between items-center mx-auto'>
-        <div className=''>
-          <span className='text-xl font-medium whitespace-nowrap dark:text-white'>
-            Welcome
-          </span>
-        </div>
-        <div className='flex '>
-        <Dropdown />
-        <div className='w-8 h-8 flex items-center justify-center'>
-      {open ? (
-        <FontAwesomeIcon
-          icon={faTimes}
-          className="text-3xl fill-slate-800 lg:hidden inline-block text-white cursor-pointer dark:fill-gray-400 dark:bg-gray-800"
-          onClick={() => setOpen(!open)}
-        />
-      ) : (
-        <FontAwesomeIcon
-          icon={faBars}
-          className="text-3xl fill-slate-800 lg:hidden inline-block text-white cursor-pointer dark:fill-gray-400 dark:bg-gray-800"
-          onClick={() => setOpen(!open)}
-        />
-      )}
-    </div>
-          <div className={`flex  ${open && 'gap-x-4 absolute top-0 left-0'} items-center`}>
-            {/* <img src={Logo} alt='' className='pl-2' /> */}
-            {open && (
-              <div className='lg:hidden'>   <Sidebar /></div>
-            )}
+    <div>
+      <section className="fixed top-0 left-0 right-0 z-50 2xl:px-[43px] xl:px-6 p-4 lg:px-[18px] px-4 py-2 lg:shadow-none lg:shadow-none shadow-whiteD   shadow-hearderS  bg-blue-100  lg:p-0 lg:relative">
+        <nav className=" w-full z-[999] flex items-center container mx-auto justify-between navbar navbar-expand-lg navbar-light lg:h-[80px]">
+          <div className="flex items-center justify-between w-full px-0">
+            <Link to="/" className="flex" >
+              <div className="flex font-bold md:text-[25px] sm:text-[22px] text-[16px] items-center">
+                <span className="lg:ml-2 font-bold text-[#000000]">
+                  Trading
+                </span>
+              </div>
+            </Link>
+
+            <div className="flex items-center">
+         
+                <Link to="/login-signup" className="text-black">
+                  Login
+                </Link>
+    
+                <div className="flex items-center">
+                  <div className="  cursor-pointer nav-item">
+                    <div className="relative">
+                      <button
+                        className="w-12 rounded-full h-12 bg-slate-300 shadow-lg"
+                        // onClick={handleDropdownClick}
+                      >
+                        <span className={`${isOpen ? "" : ""} `}>
+                          Logout
+                        </span>
+                      </button>
+                      {isOpen && (
+                        <div className="absolute top-10 right-0 z-50 w-48 py-2 bg-white rounded-md shadow-lg">
+                          <button
+                            className="block px-4 py-2 hover:bg-gray-200"
+                            // onClick={handleLogoutClick}
+                          >
+                            Log Out
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+          
+              <div className="inline-block lg:hidden md:inline-block">
+                <div className="flex items-center">
+                  <button
+                    className=" border-0 py-2 px-2.5 pr-0 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline "
+                    type="button"
+                    onClick={() => setMenu(true)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faBars}
+                      className="w-8 text-[#080808] h-8"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div
+                className={`${menu == true ? "w-[214px] " : "w-0"
+                  } bg-transparent lg:bg-transparent fixed top-0 right-0 bottom-0 lg:relative xl:w-auto z-50 lg:w-auto xl:h-auto lg:h-auto flex xl:justify-end lg:justify-end items-start`}
+              >
+                <ul
+                  className="navbar-nav relative text-center  lg:w-full w-[214px] lg:h-auto h-[100vh] lg:bg-transparent  bg-blue-200   xl:flex lg:flex  md:flex-col flex-col  items-center pl-0 list-style-none xl:h-auto
+          "
+                >
+                  <li className="flex justify-end w-full px-1 pt-1 pb-3 text-right lg:pt-0 lg:pb-0 ">
+                    <button
+                      className={` ${menu == true
+                        ? " custom-navbar-toggler inline-block"
+                        : "hidden"
+                        } 
+              lg:hidden
+              border-0
+              py-2  px-2.5
+              bg-transparent
+              focus:outline-none
+             focus:ring-0 focus:shadow-none
+             focus:no-underline `}
+                      type="button"
+                      onClick={() => setMenu(false)}
+                    >
+                      <FontAwesomeIcon
+                        icon={faXmark}
+                        className="w-9 text-[#060606] h-9"
+                      />
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </nav>
-  )
-}
-export default Navbar
+        </nav>
+      </section>
+    </div>
+  );
+};
+export default Navbar;

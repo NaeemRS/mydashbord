@@ -23,6 +23,7 @@ const Navbar = () => {
     { title: 'Dashboard', path: '/dashboard',  },
     { title: 'Contact', path: '/Contact',},
     { title: 'Login', path: '/course',  },
+    { title: 'About Us', path: '/AboutUs',  },
 
 ]
 

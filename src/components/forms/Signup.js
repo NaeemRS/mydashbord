@@ -17,10 +17,7 @@ const Signup = () => {
     window.location.href = '/dashboard';
   };
 
-  const handleLoginClick = () => {
-    setShowLoginForm(true);
-    setShowSignupForm(false);
-  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded shadow-md max-w-md w-full">
@@ -86,8 +83,7 @@ const Signup = () => {
              Signup
             </button>
           </div>
-          <button className='bg-blue-500 rounded-md text-white px-5 py-2' onClick={handleLoginClick}>Go to Login</button>
-
+       
         </form>
       </div>
     </div>

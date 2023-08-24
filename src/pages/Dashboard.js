@@ -1,4 +1,5 @@
 import React from 'react';
+import PdfGeneratorForm from '../components/forms/PdfGeneratorForm';
 
 const Dashboard = () => {
   return (
@@ -44,6 +45,7 @@ const Dashboard = () => {
           </a>
        
       </div>
+      <PdfGeneratorForm />
     </div>
   );
 };

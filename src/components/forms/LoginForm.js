@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // State to manage password visibility
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,18 +33,25 @@ const LoginForm = () => {
               required
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-4 relative">
             <label htmlFor="password" className="block text-gray-700">
               Password
             </label>
             <input
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               id="password"
               className="mt-1 p-2 border rounded w-full"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute top-1/2 right-2 transform -translate-y-1/2 text-gray-500"
+            >
+              {showPassword ? 'Hide' : 'Show'}
+            </button>
           </div>
           <div>
             <button
@@ -54,6 +62,9 @@ const LoginForm = () => {
             </button>
           </div>
         </form>
+        <div className="mt-2 text-blue-500">
+          <a href="/forgot-password">Forgot Password?</a>
+        </div>
       </div>
     </div>
   );

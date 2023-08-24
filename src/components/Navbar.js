@@ -1,18 +1,30 @@
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import Link from "next/link";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useLocation } from "react-router-dom";
 
+import { AiFillPieChart } from 'react-icons/ai';
+import { CgProfile } from 'react-icons/cg';
+import { SiFuturelearn, SiOpenaccess } from 'react-icons/si';
 const Navbar = () => {
+  const [open, setOpen] = useState(false)
+
   const [toggleMenu, setToggleMenu] = useState(false);
   const toggleClose = () => {
     setToggleMenu("");
   };
+  const location = useLocation()
+
   const [menu, setMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  const Menus = [
+    { title: 'Dashboard', path: '/dashboard',  },
+    { title: 'Contact', path: '/Contact',},
+    { title: 'Login', path: '/course',  },
 
+]
 
   // const { data: session } = useSession();
 
@@ -20,7 +32,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <section className="fixed top-0 left-0 right-0 z-50 2xl:px-[43px] xl:px-6 p-4 lg:px-[18px] px-4 py-2 lg:shadow-none lg:shadow-none shadow-whiteD   shadow-hearderS  bg-blue-100  lg:p-0 lg:relative">
+      <section className="fixed top-0 left-0 right-0 z-50 2xl:px-[43px] xl:px-6 p-4 lg:px-[18px] px-4 py-2 lg:shadow-none shadow-whiteD   shadow-hearderS  bg-blue-100  lg:p-0 lg:relative">
         <nav className=" w-full z-[999] flex items-center container mx-auto justify-between navbar navbar-expand-lg navbar-light lg:h-[80px]">
           <div className="flex items-center justify-between w-full px-0">
             <Link to="/" className="flex" >
@@ -32,7 +44,28 @@ const Navbar = () => {
             </Link>
 
             <div className="flex items-center">
-         
+            <ul className='flex items-center'>
+                    {Menus.map((menu, index) => (
+                        <Link to={menu.path} key={index}>
+                            <li
+                                className={`flex items-center gap-x-6 p-3 text-base font-normal rounded-lg cursor-pointe
+                        ${menu.gap ? 'mt-2' : 'mt-2'} ${
+                                    location.pathname === menu.path &&
+                                    'bg-transparent text-yellow-700 font-semibold dark:bg-gray-700'
+                                }`}
+                            >
+                                <span className='text-2xl'>{menu.src}</span>
+                                <span
+                                    className={`${
+                                        !open && ''
+                                    } origin-left duration-300 hover:block`}
+                                >
+                                    {menu.title}
+                                </span>
+                            </li>
+                        </Link>
+                    ))}
+                </ul>
                 <Link to="/login-signup" className="text-black">
                   Login
                 </Link>

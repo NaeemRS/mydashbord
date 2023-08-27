@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-// import Loginform1 from './Loginform1';
+import Loginform1 from './Loginform1';
 
 const Layout = ({ children }) => {
-//   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-//   const handleLogin = () => {
-//     // Perform your login logic here
-//     // Once the user is successfully logged in, update the isLoggedIn state
-//     setIsLoggedIn(true);
-//   };
+  // const handleLogin = () => {
+  //   // Perform your login logic here
+  //   // Once the user is successfully logged in, update the isLoggedIn state
+  //   setIsLoggedIn(true);
+  // };
 
-//   if (!isLoggedIn) {
-//     return <Loginform1 onLogin={handleLogin} />;
-//   }
+  // if (!isLoggedIn) {
+  //   return <Loginform1 onLogin={handleLogin} />;
+  // }
 
   return (
     <>
+      <div className="flex">
+       <div className='lg:w-[22%] w-[40%] lg:inline-block hidden '> <Sidebar /></div>
+        <div className="grow lg:w-[75%] overflow-x-scroll h-screen">
       <Navbar />
-      <div className="">
-       {/* <div className='lg:w-[22%] w-[40%] lg:inline-block hidden '> <Sidebar /></div> */}
-        <div className="grow w-full">
+
           <div className="m-5">{children}</div>
         </div>
       </div>

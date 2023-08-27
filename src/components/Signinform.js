@@ -6,7 +6,7 @@ import Google from "../images/g.svg"
 import github from "../images/git.svg"
 import micrioso from "../images/micro.svg"
 import { Link } from "react-router-dom";
-export default function Loginform1() {
+export default function Siginform() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,12 +42,11 @@ export default function Loginform1() {
                 <div>
                   <h4 className="lg:text-3xl font-bold">Sign in</h4>
                 </div>
-                <div>
-                  <Link className='text-lg text-[#DB2777]  font-semibold' to='/signup'>Register now</Link></div>
+                <div><Link className='text-lg text-[#DB2777]  font-semibold' to='/login'>Sign in</Link></div>
               </div>
-              <h4 className="lg:text-3xl mb-3 font-bold">
-                With
-              </h4>
+              <p className="text-[#DB2777]">
+                We are unable to connect with your account. Please try again
+              </p>
 
               <div className="grid grid-cols-3 gap-3">
                 <button className="flex justify-center gap-3 items-center bg-[#DC2626] rounded-full w-full text-white font-semibold h-14 text-center" type="submit">
@@ -69,9 +68,22 @@ export default function Loginform1() {
                   onSubmit={handleSubmit}
                   className="grid grid-cols-1 md:w-1/2 gap-3"
                 >
-              
-                     <div className="lg:mb-3 md:mb-3 mt-8 mb-2">
-                  
+                  <div className="lg:mb-4 mt-8 md:mb-3 mb-2">
+
+                    <input
+                      className="text-white w-full h-14 px-3 rounded-[5px] bg-transparent border border-[#b2b2b2] active:border focus:border "
+                      placeholder="Your Nmae"
+                      type="text"
+                      id="number"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="lg:mb-4 md:mb-3 mb-2">
+                    <label className="block text-white text-sm font-medium mb-[2px]" htmlFor="email">
+                      Email Address
+                    </label>
                     <input
                       className="text-white w-full h-14 px-3 rounded-[5px] bg-transparent border border-[#b2b2b2] active:border focus:border "
                       placeholder="@john@emil.com"
@@ -81,9 +93,9 @@ export default function Loginform1() {
                       onChange={(e) => setEmail(e.target.value)}
                       required
                     />
-                  </div>  
-                 
+                  </div>
                   <div className="lg:mb-4 md:mb-3 mb-2">
+
                     <div className="relative flex items-center ">
                       <input
                         className="text-white w-full h-14 px-3 rounded-[5px] bg-transparent border border-[#b2b2b2] active:border focus:border"
@@ -101,12 +113,13 @@ export default function Loginform1() {
                         <img className="w-6 mx-auto" alt="icons" src={showPassword ? (imgcheck) : (eyeSlash)} /> </button></div>
                   </div>
                   <div className="lg:mb-4 md:mb-3 mb-2 flex items-center justify-between">
-                    <button className="bg-[#DB2777] rounded-full w-[150px] text-white font-semibold h-14 text-center" type="submit">Login</button>
+                    <Link className="text-[#DB2777]">
+                      I have read and accept the Privacy Policy & Cooky Policy
+                    </Link>
 
-                    <button className="text-[#DB2777]">
-                      Forget password?
-                    </button>
                   </div>
+                  <button className="bg-[#DB2777] rounded-full w-[150px] text-white font-semibold h-14 text-center" type="submit">Login</button>
+
                 </form>
               </div>
             </div>

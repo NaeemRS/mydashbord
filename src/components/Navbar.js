@@ -19,13 +19,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const Menus = [
-    { title: 'Dashboard', path: '/dashboard',  },
-    { title: 'Contact', path: '/Contact',},
-    { title: 'Login', path: '/course',  },
-    { title: 'About Us', path: '/AboutUs',  },
 
-]
 
   // const { data: session } = useSession();
 
@@ -39,63 +33,61 @@ const Navbar = () => {
             <Link to="/" className="flex" >
               <div className="flex font-bold md:text-[25px] sm:text-[22px] text-[16px] items-center">
                 <span className="lg:ml-2 font-bold text-[#000000]">
-                  Trading
+                  Dashboard
                 </span>
               </div>
             </Link>
 
             <div className="flex items-center">
-            <ul className='flex items-center'>
-                    {Menus.map((menu, index) => (
-                        <Link to={menu.path} key={index}>
-                            <li
-                                className={`flex items-center gap-x-6 p-3 text-base font-normal rounded-lg cursor-pointe
-                        ${menu.gap ? 'mt-2' : 'mt-2'} ${
-                                    location.pathname === menu.path &&
-                                    'bg-transparent text-yellow-700 font-semibold dark:bg-gray-700'
-                                }`}
-                            >
-                                <span className='text-2xl'>{menu.src}</span>
-                                <span
-                                    className={`${
-                                        !open && ''
-                                    } origin-left duration-300 hover:block`}
-                                >
-                                    {menu.title}
-                                </span>
-                            </li>
-                        </Link>
-                    ))}
-                </ul>
-                <Link to="/login-signup" className="text-black">
-                  Login
-                </Link>
-    
-                <div className="flex items-center">
-                  <div className="  cursor-pointer nav-item">
-                    <div className="relative">
-                      <button
-                        className="w-12 rounded-full h-12 bg-slate-300 shadow-lg"
-                        // onClick={handleDropdownClick}
-                      >
-                        <span className={`${isOpen ? "" : ""} `}>
-                          Logout
-                        </span>
-                      </button>
-                      {isOpen && (
-                        <div className="absolute top-10 right-0 z-50 w-48 py-2 bg-white rounded-md shadow-lg">
-                          <button
-                            className="block px-4 py-2 hover:bg-gray-200"
-                            // onClick={handleLogoutClick}
-                          >
-                            Log Out
-                          </button>
-                        </div>
-                      )}
-                    </div>
+
+              <div className="flex items-center bg-white rounded-full shadow-sm">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="py-2 px-4 outline-none rounded-l-full text-gray-700"
+                />
+                <button className="bg-blue-500 text-white hover:bg-blue-600 rounded-r-full p-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div className="flex items-center">
+                <div className="  cursor-pointer nav-item">
+                  <div className="relative">
+                    <button
+                      className="w-12 rounded-full h-12 bg-slate-300 shadow-lg"
+                    // onClick={handleDropdownClick}
+                    >
+                      <span className={`${isOpen ? "" : ""} `}>
+                        Logout
+                      </span>
+                    </button>
+                    {isOpen && (
+                      <div className="absolute top-10 right-0 z-50 w-48 py-2 bg-white rounded-md shadow-lg">
+                        <button
+                          className="block px-4 py-2 hover:bg-gray-200"
+                        // onClick={handleLogoutClick}
+                        >
+                          Log Out
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
-          
+              </div>
+
               <div className="inline-block lg:hidden md:inline-block">
                 <div className="flex items-center">
                   <button

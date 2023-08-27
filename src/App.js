@@ -7,6 +7,7 @@ import Course from './pages/Course'
 import Contact from './pages/Contact'
 import Login from './pages/AboutUs'
 import AboutUs from './pages/AboutUs'
+import Pricingplan from './pages/Pricingplan'
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <Layout>
                 <Routes>
                     <Route path='/' element={<Home />} />
+                    <Route path='/Pricingplan' element={<Pricingplan />} />
                     <Route path='/dashboard' element={<Dashboard />} />
                     <Route path='/course' element={<Course />} />
                     <Route path='/Contact' element={<Contact />} />

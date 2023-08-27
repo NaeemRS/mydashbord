@@ -1,36 +1,39 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-import { BsArrowLeftCircle } from 'react-icons/bs'
-import { AiFillPieChart } from 'react-icons/ai'
-import { SiFuturelearn } from 'react-icons/si'
-import { SiOpenaccess } from 'react-icons/si'
-import { CgProfile } from 'react-icons/cg'
-// import Logo from '../assets/images/logo.svg'
+import AboutUs from '../images/aboutus.svg'
+import Logo from '../images/logo.svg'
+import Contactus from '../images/contactus.svg'
+import settings from '../images/setting.svg'
+import helps from '../images/help.svg'
+import signuot from '../images/signout.svg'
+
+import dashboardi from '../images/dashboard.svg'
 
 const Sidebar = () => {
     const [open, setOpen] = useState(false)
     const location = useLocation()
 
     const Menus = [
-        { title: 'Dashboard', path: '/dashboard', src: <AiFillPieChart /> },
-        { title: 'Course', path: '/course', src: <SiFuturelearn /> },
-        { title: 'Profile', path: '/profile', src: <CgProfile /> },
-        { title: 'Signin', path: '/login', src: <SiOpenaccess />, gap: 'true' },
+        { title: 'DASHBOARD', path: '/dashboard', src: <img src={dashboardi} /> },
+        { title: 'ABOUT US', path: '/AboutUs', src: <img src={AboutUs} /> },
+        { title: 'PRICING PLAN', path: '/Pricingplan', src: <img src={dashboardi} /> },
+        { title: 'CONTACT US', path: '/Contact', src: <img src={Contactus} />, gap: 'true' },
+        { title: 'SETTING', path: '/login', src: <img src={settings} />, gap: 'true' },
+        { title: 'HELP', path: '/login', src: <img src={helps} />, gap: 'true' },
+        { title: 'SIGN OUT', path: '/course', src: <img src={signuot} />, gap: 'true' },
     ]
     return (
         <>
             <div
-                className='relative h-screen duration-300 bg-gray-100 border-r w-full border-gray-200 dark:border-gray-600 p-5 dark:bg-slate-800'
+                className='relative h-screen duration-300 bg-white border-r w-full border-gray-200 dark:border-gray-600 p-5 dark:bg-slate-800'
             >
                 
                 <Link to='/'>
-                    <div className={`flex ${open && 'gap-x-4'} items-center`}>
-                        {/* <img src={Logo} alt='' className='pl-2' /> */}
+                    <div className={`flex ${open && 'gap-x-4'} items-center justify-center`}>
+                        <img src={Logo} alt='' className='pl-2' />
                         {open && (
-                            <span className='text-xl font-medium whitespace-nowrap dark:text-white'>
-                                Goal Quest
-                            </span>
+                           <></>
                         )}
                     </div>
                 </Link>

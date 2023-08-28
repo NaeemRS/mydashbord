@@ -1,49 +1,29 @@
 import React from 'react';
 import PdfGeneratorForm from '../components/forms/PdfGeneratorForm';
 
+const pdfs = [
+  { name: 'PDF 1', path: '/path/to/pdf1.pdf' },
+  { name: 'PDF 2', path: '/path/to/pdf2.pdf' },
+  { name: 'PDF 3', path: '/path/to/pdf3.pdf' },
+  { name: 'PDF 4', path: '/path/to/pdf4.pdf' },
+];
+
 const Dashboard = () => {
   return (
     <div className="md:mt-10 mt-5">
       <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4">
-   
+        {pdfs.map((pdf, index) => (
           <a
-            href="/path/to/pdf1.pdf"
+            key={index}
+            href={pdf.path}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white font-medium p-4 shadow-md rounded-md w-full text-center bg-blue-500"
+            className="text-white font-medium p-4 shadow-md rounded-md w-full text-center bg-[#dc262653]"
           >
-            PDF 1
+            <img src={pdfs.images} />
+            {pdf.name}
           </a>
-  <a
-            href="/path/to/pdf2.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-                        className="text-white font-medium p-4 shadow-md rounded-md w-full text-center bg-blue-500"
-
-          >
-            PDF 2
-          </a>
-      
-          <a
-            href="/path/to/pdf3.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-                        className="text-white font-medium p-4 shadow-md rounded-md w-full text-center bg-blue-500"
-
-          >
-            PDF 3
-          </a>
-        
-      <a
-            href="/path/to/pdf4.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-                        className="text-white font-medium p-4 shadow-md rounded-md w-full text-center bg-blue-500"
-
-          >
-            PDF 4
-          </a>
-       
+        ))}
       </div>
       <PdfGeneratorForm />
     </div>

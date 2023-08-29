@@ -8,7 +8,8 @@ import Contact from './pages/Contact'
 import Login from './pages/AboutUs'
 import AboutUs from './pages/AboutUs'
 import Pricingplan from './pages/Pricingplan'
-import CreatePdf from './pages/CreatePdf'
+import CreatePdf from './components/CreatePdf'
+import SearchPage from './pages/SearchPage'
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                     <Route path='/login' element={<Login />} />
                     <Route path='/AboutUs' element={<AboutUs />} />
                     <Route path='/CreatePdf' element={<CreatePdf />} />
+                    <Route path='/SearchPage' element={<SearchPage />} />
                 </Routes>
             </Layout>
         </BrowserRouter>

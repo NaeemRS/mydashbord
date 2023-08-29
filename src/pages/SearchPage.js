@@ -1,8 +1,6 @@
 import React from 'react';
-import PdfGeneratorForm from '../components/forms/PdfGeneratorForm';
 import pdf1 from '../images/pdf1.png';
 import pdf2 from '../images/pdf2.png';
-import { Link } from 'react-router-dom';
 
 const pdfs = [
   { name: 'PDF 1', path: <img src={pdf1} /> },
@@ -15,7 +13,7 @@ const pdfs = [
   { name: 'PDF 8', path: <img src={pdf2} /> },
 ];
 
-const CreatePdf = () => {
+const SearchPage = () => {
   return (
     <div className="md:mt-10 w-full mt-5 p-5 bg-[#F5F5F8]">
       <div className="grid md:grid-cols-4  sm:grid-cols-2 grid-cols-1 gap-4">
@@ -34,9 +32,9 @@ const CreatePdf = () => {
           </div>
         ))}
       </div>
-      <PdfGeneratorForm />
+      
     </div>
   );
 };
 
-export default CreatePdf;
+export default SearchPage;

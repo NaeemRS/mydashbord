@@ -63,7 +63,7 @@ const Navbar = () => {
                   </svg>
                 </button>
               </div>
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <div className="  cursor-pointer nav-item">
                   <div className="relative">
                     <button
@@ -85,7 +85,7 @@ const Navbar = () => {
                     )}
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               <div className="inline-block lg:hidden md:inline-block">
                 <div className="flex items-center">
@@ -101,7 +101,7 @@ const Navbar = () => {
                   </button>
                 </div>
               </div>
-              <div
+              {/* <div
                 className={`${menu == true ? "w-[214px] " : "w-0"
                   } bg-transparent lg:bg-transparent fixed top-0 right-0 bottom-0 lg:relative xl:w-auto z-50 lg:w-auto xl:h-auto lg:h-auto flex xl:justify-end lg:justify-end items-start`}
               >
@@ -132,7 +132,7 @@ const Navbar = () => {
                     </button>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </nav>

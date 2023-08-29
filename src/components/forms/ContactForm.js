@@ -22,57 +22,118 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md max-w-md w-full">
-        <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
+    <div className=" flex items-center justify-center">
+      <div className=" p-8  max-w-md w-full">
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="mt-1 p-2 border rounded w-full"
-              required
-            />
+          <div className='grid sm:grid-cols-2 grid-cols-1 gap-4'>
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+                First Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder='Aman'
+                value={formData.name}
+                onChange={handleChange}
+                className="mt-1 p-2 border-b focus:border-b  rounded w-full"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+                Last Name
+              </label>
+              <input
+                type="text"
+                placeholder='Aman'
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="mt-1 p-2 border-b focus:border-b  rounded w-full"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                placeholder='demo@gmail.com'
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="mt-1 p-2 border-b focus:border-b  rounded w-full"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+                Phone Number
+              </label>
+              <input
+                type="number"
+                placeholder='+1234567890'
+                id="number"
+                name="number"
+                value={formData.number}
+                onChange={handleChange}
+                className="mt-1 p-2 border-b focus:border-b  rounded w-full"
+                required
+              />
+            </div>
+
+          </div>
+          <div>
+            <h5 className='text-black text-sm'>
+              Select Subject?
+            </h5>
+            <div className='flex items-center my-5 gap-3 flex-wrap'>
+              <div className='flex items-center gap-2'>
+                <input type='radio' />
+                <h5 className='text-gray-800 text-xs whitespace-nowrap'>
+                General Inquiry
+                </h5>
+              </div>
+              <div className='flex items-center gap-2'>
+                <input type='radio' /><h5 className='text-gray-800 text-xs whitespace-nowrap'>
+                General Inquiry
+                </h5>
+              </div>  <div className='flex items-center gap-2'>
+                <input type='radio' /><h5 className='text-gray-800 text-xs whitespace-nowrap'>
+                General Inquiry
+                </h5>
+              </div>  <div className='flex items-center gap-2'>
+                <input type='radio' /><h5 className='text-gray-800 text-xs whitespace-nowrap'>
+                General Inquiry
+                </h5>
+              </div>
+            </div>
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="mt-1 p-2 border rounded w-full"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+              <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
               Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="4"
-              className="mt-1 p-2 border rounded w-full"
-              required
-            ></textarea>
-          </div>
+              </label>
+              <input
+                type="text"
+                placeholder='Write your Message'
+                id="Message"
+                name="Message"
+                value={formData.number}
+                onChange={handleChange}
+                className="mt-1 p-2 border-b focus:border-b  rounded w-full"
+                required
+              />
+            </div>
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            className="bg-[#DC2626] text-white px-4 py-2 w-[200px] ml-auto rounded hover:bg-[#DC2626]"
           >
-            Submit
+            Send Message
           </button>
         </form>
       </div>

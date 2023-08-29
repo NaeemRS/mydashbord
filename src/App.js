@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import Login from './pages/AboutUs'
 import AboutUs from './pages/AboutUs'
 import Pricingplan from './pages/Pricingplan'
+import CreatePdf from './pages/CreatePdf'
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                     <Route path='/Contact' element={<Contact />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/AboutUs' element={<AboutUs />} />
+                    <Route path='/CreatePdf' element={<CreatePdf />} />
                 </Routes>
             </Layout>
         </BrowserRouter>

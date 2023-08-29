@@ -4,35 +4,35 @@ const Userdetail = ({}) => {
     const users = [
         {
           id: 1,
-          name: "John Doe",
-          email: "john@example.com",
-          gender: "Male",
-          role: "Admin",
+          name: "Basic",
+          email: "Aman",
+          gender: "---",
+          role: "submit",
         },
         {
           id: 2,
-          name: "Jane Smith",
-          email: "jane@example.com",
-          gender: "Female",
-          role: "User",
+          name: "Basic",
+          email: "Aman",
+          gender: "---",
+          role: "submit",
         },
       ];
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200">
+      <table className="min-w-full divide-y border  divide-gray-200">
         <thead className="bg-gray-50">
           <tr>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Name
+              Plan
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Email
+              User Nmae
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Gender
+              Title
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Role
+              Btn
             </th>
           </tr>
         </thead>
@@ -40,7 +40,7 @@ const Userdetail = ({}) => {
           {users.map((user) => (
             <tr key={user.id}>
               <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-900">{user.name}</div>
+                <div className="text-sm font-semibold md:text-lg text-green-600">{user.name}</div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="text-sm text-gray-900">{user.email}</div>
@@ -49,7 +49,7 @@ const Userdetail = ({}) => {
                 <div className="text-sm text-gray-900">{user.gender}</div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-900">{user.role}</div>
+                <button type="" className="text-sm px-4 py-2 w-[150px] rounded-lg bg-[#E92424] text-white">{user.role}</button>
               </td>
             </tr>
           ))}

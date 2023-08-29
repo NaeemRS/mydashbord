@@ -37,7 +37,6 @@ const Navbar = () => {
                 </span>
               </div>
             </Link>
-
             <div className="flex items-center">
 
               <div className="flex items-center bg-white rounded-full shadow-sm">
